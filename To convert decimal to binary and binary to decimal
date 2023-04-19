@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+int conv(int);
+int main() 
+{
+  int n;
+  printf("Enter a binary number: ");
+  scanf("%d",&n);
+  printf("%d in binary = %d in decimal",n,conv(n));
+  return 0;
+}
+int conv(int n) 
+{
+  int deci=0,i=0,rem;
+  while (n!=0) 
+  {
+    rem=n%10;
+    n/=10;
+    deci+=rem*pow(2,i);
+    ++i;
+  }
+  return deci;
+}
